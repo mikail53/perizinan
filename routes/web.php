@@ -23,7 +23,7 @@ Route::post('/',[SesiController::class, 'login']);
 
 });
 Route::get('/home',function(){
-    return redirect('/admin');
+    return redirect('/home');
 });
 
 
@@ -34,3 +34,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/logout',[SesiController::class,'logout']);
 
 });
+
+use App\Http\Controllers\IzinController;
+
+Route::resource('izin', IzinController::class);
